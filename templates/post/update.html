@@ -1,0 +1,12 @@
+{% extends 'post/base.html' %}
+
+{% block body_block %}
+
+    <form action="{% url 'post:update' id=post.id %}" method = "post">    <!--{'post':post}가 없고 form만 넘겨주었기 때문-->
+        {% csrf_token %} <!--post 방식으로 넘기기 때문에 필요-->
+        {{form}}
+        <input type="submit"/>
+    </form>
+    <script>var editor = new MediumEditor('.editable');</script>
+
+{% endblock %}

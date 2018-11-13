@@ -1,0 +1,9 @@
+{% extends 'post/base.html' %}
+
+{% block body_block %}
+<h1>여기는 list입니다.</h1>
+    {% for post in posts %}
+        <h1>{{post.title}}</h1>
+        <a href="{% url 'post:detail' id=post.id %}">글보기</a>
+    {% endfor %}   <!--url로 변환 -> post의 detail 이름을 가진 주소로 변환 -> id는 post.id의 값으로 변환-->
+{% endblock %}     <!--id 대신 다른 변수명으로 정하면 바꿀 것-->

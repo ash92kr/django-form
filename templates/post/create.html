@@ -1,0 +1,11 @@
+{% extends 'post/base.html' %}
+
+{% block body_block %}
+    <!-- 폼을 넣어야 합니다 -->
+    <form action="{% url 'post:create' %}" method = "post">  <!--폴더와 주소를 연결시킴-->
+        {% csrf_token %}  <!--{%는 이미 정해진 규칙, {{%는 사용자가 임의로 정한 규칙-->
+        {{form}}
+        <input type="submit"/>
+    </form>
+    <script>var editor = new MediumEditor('.editable');</script>
+{% endblock %}

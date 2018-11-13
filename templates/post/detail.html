@@ -1,0 +1,12 @@
+{% extends 'post/base.html' %}
+
+{% block body_block %}
+    
+    <a href="{% url 'post:delete' id=post.id %}">삭제</a>
+    <a href="{% url 'post:update' id=post.id %}">수정</a>
+    <h1>{{post.title}}</h1>
+{% autoescape off %}
+    <h4>{{post.content|safe}}</h4>
+    <!--그런데 문제는 html 태그도 함께 나온다-->
+{% endautoescape %}
+{% endblock %}
